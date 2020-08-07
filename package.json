@@ -1,0 +1,33 @@
+{
+  "name": "alohomora2.0",
+  "version": "1.0.0",
+  "description": "alohomora chat app for hp fans",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilyjspencer/Alohomora--2.0.git"
+  },
+  "keywords": [
+    "chat",
+    "app",
+    "websockets",
+    "harry",
+    "potter"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emilyjspencer/Alohomora--2.0/issues"
+  },
+  "homepage": "https://github.com/emilyjspencer/Alohomora--2.0#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "socket.io": "^2.3.0"
+  }
+}
