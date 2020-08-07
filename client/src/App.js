@@ -3,6 +3,7 @@ import Header from './components/UI/Header/Header';
 import Chatroom from './components/Chatroom/Chatroom';
 import SortingHat from './components/SortingHat/SortingHat';
 import Quiz from './components/Quiz/Quiz';
+import User from './components/User/User';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const App = () => {
@@ -10,11 +11,12 @@ const App = () => {
         <>
           <Router>
               <Switch>
-            <Route path="/" exact component={Header} />
-            <Chatroom path="/chatroom" exact component={Chatroom} />
-            <Quiz path="/quiz" exact component={Quiz} />
-            <SortingHat path="/sortinghat" exact component={SortingHat} />
-            </Switch>
+                <Route path="/" exact component={Header} />
+                <Chatroom path="/chatroom" exact component={Chatroom} />
+                <Quiz path="/quiz" exact component={Quiz} />
+                <SortingHat path="/sortinghat" exact component={SortingHat} />
+                <User path="/user" exact component={User} />
+              </Switch>
           </Router>
         </>
     )
