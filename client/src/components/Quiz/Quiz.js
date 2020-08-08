@@ -4,7 +4,7 @@ import Header from '../UI/Header/Header';
 
 import classes from './Quiz.module.css';
 
-import {QuizData} from './QuizData';
+import { QuizData } from './QuizData';
 
 class Quiz extends Component  {
 
@@ -12,7 +12,7 @@ class Quiz extends Component  {
         super(props)
 
         this.state = {
-            currentIndex: 0,
+            index: 0,
             options: [],
             end: false,
             score: 0,
@@ -23,17 +23,41 @@ class Quiz extends Component  {
 
 
   loadQuestion = () => {
-      const { currentIndex } = this.state;
+      const { index } = this.state;
       this.setState(() => {
           return {
-              question: QuizData[currentIndex].question,
-              options: QuizData[currentIndex].options,
-              answer: QuizData[currentIndex].answer
+            options: QuizData[index].options,
+            answer: QuizData[index].answer,
+            question: QuizData[index].question  
           }
-      }
+      })
+  };
 
-      )
+  componentDidMount() {
+    this.loadQuestion()
   }
+
+  componentDidUpdate(prevProps, prevState) {
+   
+    const { index } = this.state;
+ 
+    if(this.state.index !== prevState.index) {
+        this.setState(() => {
+            return {
+                question: QuizData[index].question,
+                options: QuizData[index].options,
+                answer: QuizData[index].answer
+            }
+        })
+    }
+}
+
+checkAnswer = (answer) => {
+    this.setState({
+      userAnswer: answer,
+      disabled: false
+    })
+}
 
   nextQuestionHandler = () => {
       const { userAnswer, answer, score} = this.state
@@ -45,7 +69,7 @@ class Quiz extends Component  {
       }
     
       this.setState({
-          currentIndex: this.state.currentIndex + 1,
+          index: this.state.index + 1,
           userAnswer: null
       })
  
@@ -53,12 +77,19 @@ class Quiz extends Component  {
 
 
   render() {
-     
+    const {question, options, index, userAnswer, end } = this.state;
 
     return (
         <>
           <Header />
           <h1 className={classes.Header}>Test your Harry Potter knowledge</h1>
+          <div>
+            <h2>{question}</h2>
+            <h2>{question}</h2>
+            <h2>{question}</h2>
+            <h2>{question}</h2>
+            <h2>{question}</h2>
+          </div>
         </>
     )
   }
