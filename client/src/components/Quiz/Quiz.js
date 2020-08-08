@@ -77,18 +77,19 @@ checkAnswer = (answer) => {
 
 
   render() {
-    const {question, options, index, userAnswer, end } = this.state;
-
+    const { question, options, index, userAnswer, end } = this.state;
+    
+    const optionstwo  = options.map((option)  => 
+      <li>{option}</li>
+    )
     return (
         <>
           <Header />
           <h1 className={classes.Header}>Test your Harry Potter knowledge</h1>
           <div>
             <h2>{question}</h2>
-            <h2>{question}</h2>
-            <h2>{question}</h2>
-            <h2>{question}</h2>
-            <h2>{question}</h2>
+            <h2>{optionstwo}</h2>
+            <span>{`Question ${index + 1} of ${QuizData.length}`}</span>
           </div>
         </>
     )
