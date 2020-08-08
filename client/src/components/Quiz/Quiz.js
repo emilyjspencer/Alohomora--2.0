@@ -90,6 +90,9 @@ checkAnswer = (answer) => {
             <h2>{question}</h2>
             <h2>{optionstwo}</h2>
             <span>{`Question ${index + 1} of ${QuizData.length}`}</span>
+            <br />
+            <br />
+            <button onClick={this.nextQuestionHandler}>Next Question</button>
           </div>
         </>
     )
