@@ -1,4 +1,4 @@
-[
+export const QuizData = [
     {
         id: 1,
         question: 'When is Harry Potters Birthday?',
