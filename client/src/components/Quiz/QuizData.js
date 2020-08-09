@@ -154,7 +154,7 @@ export const QuizData = [
       },
       { id: 26,
          question: 'What are Dumbledore\'s signature spells?',
-         options: ['Apparition and Invisibility', 'Disarming Charm and Apparition', 'Invisibily and Langlock', 'Muffliato and Alohomora'],
+         options: ['Apparition and Invisibility', 'Disarming Charm and Apparition', 'Invisibility and Langlock', 'Muffliato and Alohomora'],
          answer: 'Apparition and Invisibility'
       
       }
