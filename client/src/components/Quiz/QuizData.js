@@ -114,7 +114,7 @@ export const QuizData = [
          id: 19,
          question: 'What animal could Peter Pettigrew turn into?',
          options: ['cat', 'mouse' , 'rat', 'snake'], 
-         answer: '142'
+         answer: 'rat'
 
       }, {
          id: 20,
@@ -147,6 +147,17 @@ export const QuizData = [
          options: ['The Weekly Clairvoyant', 'The Daily Oracle', 'The Daily Prophet', ' The Sibyl'],
          answer: 'The Daily Prophet'
       },
+      { id: 25,
+         question: 'What is Snape\'s signature spell?',
+         options: ['Disarming Charm', 'Muffliato Charm', 'Langlock', 'Vulnera Sanentur'],
+         answer: 'Disarming Charm'        
+      },
+      { id: 26,
+         question: 'What are Dumbledore\'s signature spells?',
+         options: ['Apparition and Invisibility', 'Disarming Charm and Apparition', 'Invisibily and Langlock', 'Muffliato and Alohomora'],
+         answer: 'Apparition and Invisibility'
+      
+      }
       
      
         

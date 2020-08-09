@@ -64,10 +64,18 @@ checkAnswer = (answer) => {
 }
 
 endQuizHandler = () => {
+  const { answer, userAnswer, score } = this.state;
+  if( userAnswer === answer) {
+    this.setState({
+      score: score + 1
+    })
+   }
   if(this.state.index === QuizData.length -1){
     this.setState({
-      disabled: true
+      disabled: true,
+      end: true
     })
+
   }
 }
 
@@ -91,6 +99,13 @@ endQuizHandler = () => {
   render() {
     const { question, options, index, userAnswer, end } = this.state;
     
+    if(end) {
+      return (
+        <div>
+          <h1>{`You scored: {this.state.score} out of a possible 26 questions`}</h1>
+        </div>
+      )
+    }
     return (
         <>
           <Header />
@@ -114,7 +129,10 @@ endQuizHandler = () => {
             Next Question</button>}
             
             {index === QuizData.length -1 && 
-            <button onClick={this.endQuizHandler}>End of Quiz</button>
+            <button 
+              disabled= {this.state.disabled} 
+              onClick={this.endQuizHandler}>
+                End of Quiz</button>
             } 
             <br />
             <br />
