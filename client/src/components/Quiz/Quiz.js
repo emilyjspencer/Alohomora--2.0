@@ -98,10 +98,17 @@ checkAnswer = (answer) => {
          </p>
              )
         }
+        { index < QuizData.length - 1 && 
+        <button 
+          disabled = {this.state.disabled } 
+          onClick={this.nextQuestionHandler}>
+            Next Question</button>}
+            <br />
+            <br />
             <span>{`Question ${index + 1} of ${QuizData.length}`}</span>
             <br />
             <br />
-            <button onClick={this.nextQuestionHandler}>Next Question</button>
+           
           </div>
         </>
     )
