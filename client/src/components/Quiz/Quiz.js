@@ -63,6 +63,14 @@ checkAnswer = (answer) => {
     })
 }
 
+endQuizHandler = () => {
+  if(this.state.index === QuizData.length -1){
+    this.setState({
+      disabled: true
+    })
+  }
+}
+
   nextQuestionHandler = () => {
       const { userAnswer, answer, score} = this.state
       
@@ -98,16 +106,24 @@ checkAnswer = (answer) => {
          </p>
              )
         }
+        
         { index < QuizData.length - 1 && 
         <button 
           disabled = {this.state.disabled } 
           onClick={this.nextQuestionHandler}>
             Next Question</button>}
+            
+            {index === QuizData.length -1 && 
+            <button onClick={this.endQuizHandler}>End of Quiz</button>
+            } 
             <br />
             <br />
+          
             <span>{`Question ${index + 1} of ${QuizData.length}`}</span>
             <br />
+            
             <br />
+            
            
           </div>
         </>
