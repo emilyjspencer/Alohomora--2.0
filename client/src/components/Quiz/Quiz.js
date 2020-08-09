@@ -2,9 +2,11 @@ import React, { Component, Fragment } from 'react';
 
 import Header from '../UI/Header/Header';
 
-import classes from './Quiz.module.css';
+//import classes from './Quiz.module.css';
+import './Quiz.css';
 
 import { QuizData } from './QuizData';
+
 
 class Quiz extends Component  {
 
@@ -23,7 +25,9 @@ class Quiz extends Component  {
 
 
   loadQuestion = () => {
+    
       const { index } = this.state;
+    
       this.setState(() => {
           return {
             options: QuizData[index].options,
@@ -79,16 +83,21 @@ checkAnswer = (answer) => {
   render() {
     const { question, options, index, userAnswer, end } = this.state;
     
-    const optionstwo  = options.map((option)  => 
-      <li>{option}</li>
-    )
     return (
         <>
           <Header />
-          <h1 className={classes.Header}>Test your Harry Potter knowledge</h1>
+          <h1 className="Header">Test your Harry Potter knowledge</h1>
           <div>
             <h2>{question}</h2>
-            <h2>{optionstwo}</h2>
+            { 
+             options.map((option) => 
+           <p key={option.id} className={`options ${userAnswer === option? "selected" : null}`}
+           onClick = {() => this.checkAnswer(option)}>
+           {option}
+         
+         </p>
+             )
+        }
             <span>{`Question ${index + 1} of ${QuizData.length}`}</span>
             <br />
             <br />
