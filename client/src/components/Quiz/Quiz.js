@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 
 import Header from '../UI/Header/Header';
 
-//import classes from './Quiz.module.css';
 import './Quiz.css';
 
 import { QuizData } from './QuizData';
@@ -98,11 +97,11 @@ endQuizHandler = () => {
   startQuizHandler = () => {
     this.setState({
       index: 0,
-            options: [],
-            end: false,
-            score: 0,
-            disabled: true,
-            userAnswer: null,
+      options: [],
+      end: false,
+      score: 0,
+      disabled: true,
+      userAnswer: null,
     }) 
   }
 
@@ -152,7 +151,7 @@ endQuizHandler = () => {
             
             {index === QuizData.length -1 && 
             <button 
-              disabled= {this.state.disabled = false} 
+              
               onClick={this.endQuizHandler}>
                 End of Quiz</button>
             } 
