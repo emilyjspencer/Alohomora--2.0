@@ -22,6 +22,10 @@ io.on('connection', (socket) => {
     socket.on('enterUser', ( { username, name, chatroom }) => {
         console.log(username, name, chatroom)
     })
+
+    socket.on('disconnect', () => {
+        console.log('User has left the chat')
+    })
 });
 
 server.listen(PORT, () => {
