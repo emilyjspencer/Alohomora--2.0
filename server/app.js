@@ -18,6 +18,10 @@ app.use(router);
 
 io.on('connection', (socket) => {
     console.log('Connecting....')
+
+    socket.on('enterUser', ( { username, name, chatroom }) => {
+        console.log(username, name, chatroom)
+    })
 });
 
 server.listen(PORT, () => {
