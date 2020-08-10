@@ -27,9 +27,14 @@ const Chatroom = ( { location } ) => {
     setUsername(username);
     setChatroom(chatroom);
 
-    socket.emit('enterUser', { name, username, chatroom } ) 
+    socket.emit('enterUser', { name, username, chatroom }, () => {
+   
 
-  })
+    });
+  }
+ 
+  , [ENDPOINT, location.search]); 
+
     return (
         <>
           <Header />
