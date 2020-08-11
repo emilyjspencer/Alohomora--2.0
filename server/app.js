@@ -18,9 +18,13 @@ app.use(router);
 
 io.on('connection', (socket) => {
     console.log('Connecting....')
+// this callback function is linked to the callback function define in the Chat component
+// which has got the error inside of it
+    socket.on('enterUser', ( { username, name, chatroom}, callback)  => {
+        console.log(username, name, chatroom);
 
-    socket.on('enterUser', ( { username, name, chatroom }) => {
-        console.log(username, name, chatroom)
+        
+        
     })
 
     socket.on('disconnect', () => {
