@@ -4,6 +4,8 @@ const router = require('./router.js');
 
 const http = require('http');
 const app = express();
+
+const { addUser, deleteUser, findUser, findAllUsers } = require('./users.js');
 const PORT = process.env.PORT || 5000;
 
 const server = http.createServer(app);

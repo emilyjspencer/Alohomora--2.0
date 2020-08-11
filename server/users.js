@@ -32,6 +32,18 @@ const deleteUser = (id) => {
 
 }
 
+const findUser = (id) => {
+    users.find((user) => user.id === id);
+
+}
+
+const findAllUsers = (chatroom) => {
+    users.filter((user) => user.chatroom === room);
+
+}
+
+module.exports = [addUser, deleteUser, findUser, findAllUsers];
+
 
 
 
