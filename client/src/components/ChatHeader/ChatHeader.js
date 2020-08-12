@@ -15,7 +15,7 @@ const ChatHeader = ( { chatroom } ) => (
         <img id="face2" alt="snitch" src={face} />
       </div>
       <div className="right">
-        <a href="/" ><img src={off} alt="close" /></a>
+        <a href="/user" ><img src={off} alt="close" /></a>
       </div>
       <div className="potter">
           <img id="face" alt="hp" src={face} />
