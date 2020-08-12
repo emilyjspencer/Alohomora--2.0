@@ -41,6 +41,12 @@ const Chatroom = ( { location } ) => {
  
   , [ENDPOINT, location.search]); 
 
+  useEffect(() => {
+    socket.on('message', (message) => {
+      setMessages([...messages, message]);
+    })
+  }, [messages])
+
     return (
         <>
           <Header />
