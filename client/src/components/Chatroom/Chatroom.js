@@ -4,6 +4,7 @@ import ChatHeader from '../ChatHeader/ChatHeader';
 import InputBox from '../InputBox/InputBox.js';
 import queryString from 'query-string';
 import io from 'socket.io-client';
+import Messages from '../Messages/Messages';
 
 import classes from './Chatroom.module.css';
 import './Chatroom.css';
@@ -70,12 +71,8 @@ const Chatroom = ( { location } ) => {
             <div className="container">
               <ChatHeader chatroom={chatroom} />
               <InputBox message={message} setMessage={setMessage} sendMessage={sendMessage} />
-              <input 
-                type="text"
-                value={message}
-                onChange={(event) => setMessage(event.target.value)}
-                onKeyPress={(event) => event.key === 'Enter' ? sendMessage(event) : null}
-                />
+              
+                <Messages messages={messages} name={name} />
             </div>
 
           </div>

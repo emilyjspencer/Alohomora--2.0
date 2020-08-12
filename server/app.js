@@ -26,20 +26,19 @@ io.on('connection', (socket) => {
 
         const {  user } = addUser( { id: socket.id, name, username, chatroom });
 
-        //if(error) return callback(error);
-
-        socket.emit('message', { user: 'wizard', text: `Welcome to the ${user.chatroom} room, ${user.name}`});
-
-        socket.broadcast.to(user.chatroom).emit('message', { user: 'wizard', text: `${user.name} has joined the ${user.chatroom}`});
-
         socket.join(user.chatroom);
+        socket.emit('message', { user: 'adminwizard', text: `Welcome to the ${user.chatroom} room, ${user.name}`});
+
+        socket.broadcast.to(user.chatroom).emit('message', { user: 'adminwizard', text: `${user.name} has joined the ${user.chatroom}`});
+
+      
 
         callback();
         
     });
 
     socket.on('sendMessage', (message, callback) => {
-        const user = getUser(socket.id);
+        const user = findUser(socket.id);
 
         io.to(user.chatroom).emit('message', { user: user.name, text: message });
 
