@@ -13,6 +13,9 @@ const Chatroom = ( { location } ) => {
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [chatroom, setChatroom] = useState('');
+  const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState([]);
+
   const ENDPOINT = 'localhost:5000';
 
   useEffect(() => {
@@ -28,7 +31,7 @@ const Chatroom = ( { location } ) => {
     setChatroom(chatroom);
 
     socket.emit('enterUser', { name, username, chatroom }, () => {
-   
+      
 
     });
 
@@ -37,9 +40,7 @@ const Chatroom = ( { location } ) => {
 
       socket.off();
     }
-  }
- 
-  , [ENDPOINT, location.search]); 
+  }, [ENDPOINT, location.search]); 
 
   useEffect(() => {
     socket.on('message', (message) => {
@@ -47,10 +48,33 @@ const Chatroom = ( { location } ) => {
     })
   }, [messages])
 
+
+  const sendMessage = (event) => {
+
+    event.preventDefault();
+
+    if(message) {
+        socket.emit('sendMessage', message, () => setMessage(''));
+
+    }
+  }
+  console.log(message, messages);
+
     return (
         <>
           <Header />
           <h1 className={classes.Header}>Chatroom</h1>
+          <div className="outer">
+            <div className="container">
+              <input 
+                type="text"
+                value={message}
+                onChange={(event) => setMessage(event.target.value)}
+                onKeyPress={(event) => event.key === 'Enter' ? sendMessage(event) : null}
+                />
+            </div>
+
+          </div>
         </>
     )
 }

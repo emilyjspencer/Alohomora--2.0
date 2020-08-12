@@ -18,7 +18,7 @@ const io = socketio(server);
 app.use(router);
 
 
-io.on('connect', (socket) => {
+io.on('connection', (socket) => {
     console.log('Connecting....')
 
     socket.on('enterUser', ( { username, name, chatroom}, callback)  => {
@@ -30,7 +30,7 @@ io.on('connect', (socket) => {
 
         socket.emit('message', { user: 'wizard', text: `Welcome to the ${user.chatroom} room, ${user.name}`});
 
-        socket.broadcast.to(user.room).emit('message', { user: 'wizard', text: `${user.name} has joined the ${user.chatroom}`});
+        socket.broadcast.to(user.chatroom).emit('message', { user: 'wizard', text: `${user.name} has joined the ${user.chatroom}`});
 
         socket.join(user.chatroom);
 
@@ -42,6 +42,8 @@ io.on('connect', (socket) => {
         const user = getUser(socket.id);
 
         io.to(user.chatroom).emit('message', { user: user.name, text: message });
+
+        callback();
     })
 
     socket.on('disconnect', () => {
