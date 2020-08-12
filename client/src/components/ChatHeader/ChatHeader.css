@@ -1,0 +1,46 @@
+
+  
+  .left {
+    flex: 0.5;
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+    color: white;
+  }
+  
+  .right{
+    display: flex;
+    flex: 0.5;
+    justify-content: flex-end;
+    margin-right: 5%;
+  }
+  
+  .online {
+    margin-right: 5%;
+  }
+
+  #face {
+      position: relative;
+      top: 280px;
+      right: 10px;
+      height: 100px;
+      width: 100px;
+  }
+
+  #face2 {
+    position: relative;
+    top: 280px;
+    left: -260px;
+    height: 100px;
+    width: 100px;
+}
+
+  .infoBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(16, 97, 79);
+    border-radius: 4px 4px 0 0;
+    height: 60px;
+    width: 100%;
+  }

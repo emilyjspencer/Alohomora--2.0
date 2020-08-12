@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Header from '../UI/Header/Header';
+import ChatHeader from '../ChatHeader/ChatHeader';
 import queryString from 'query-string';
 import io from 'socket.io-client';
 
@@ -66,6 +67,7 @@ const Chatroom = ( { location } ) => {
           <h1 className={classes.Header}>Chatroom</h1>
           <div className="outer">
             <div className="container">
+              <ChatHeader chatroom={chatroom} />
               <input 
                 type="text"
                 value={message}
