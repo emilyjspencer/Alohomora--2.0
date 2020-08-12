@@ -18,15 +18,15 @@ const io = socketio(server);
 app.use(router);
 
 
-io.on('connection', (socket) => {
+io.on('connect', (socket) => {
     console.log('Connecting....')
 
     socket.on('enterUser', ( { username, name, chatroom}, callback)  => {
         console.log(username, name, chatroom);
 
-        const { error, user } = addUser( { id: socket.id, name, username, chatroom });
+        const {  user } = addUser( { id: socket.id, name, username, chatroom });
 
-        if(error) return callback(error);
+        //if(error) return callback(error);
 
         socket.emit('message', { user: 'wizard', text: `Welcome to the ${user.chatroom} room, ${user.name}`});
 
