@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import Cards from '../Cards/Cards';
+
 
 const Spells = () => {
 
     const [spells, setSpells] = useState([]);
 
     useEffect(() => {
+        
         const key = process.env.REACT_APP_API_KEY;
         console.log(key)
         
@@ -29,6 +32,7 @@ const Spells = () => {
     return (
         <div className="spells">
           <h1>Spells</h1>
+          <Cards />
             <ul>
                 {spells.map(spell => (
                     <li key={spell.id}>
