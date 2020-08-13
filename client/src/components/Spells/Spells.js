@@ -11,19 +11,36 @@ const Spells = () => {
         console.log(key)
         
         
+        
 
         axios.get(`https://www.potterapi.com/v1/spells?key=${key}`)
           .then(result => {
              console.log(result)
-              const spellsdata = result.data;
-              console.log(spellsdata);
-          })
+              const spellsData = result.data;
+              console.log(spellsData);
+
+              console.log(spellsData[0]);
+                setSpells(spellsData)
+          });
+        }, []);
 
 
-    })
 
     return (
-        <h1>Spells</h1>
+        <div className="spells">
+          <h1>Spells</h1>
+            <ul>
+                {spells.map(spell => (
+                    <li key={spell.id}>
+                        <strong>{spell.spell}</strong>
+                        <br />
+                        <strong>{spell.type}</strong>
+                        <strong>{spell.effect}</strong>
+                    </li>
+                ))}
+            </ul>
+        </div>
+        
     )
 
 
