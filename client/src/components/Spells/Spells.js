@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { fragment, useState, useEffect } from 'react';
 import axios from 'axios';
 
 import Cards from '../Cards/Cards';
@@ -10,7 +10,8 @@ const Spells = () => {
 
     useEffect(() => {
         
-        const key = process.env.REACT_APP_API_KEY;
+        const key='$2a$10$0TXo.XhZgsclRMsBTLHsx.5fYykcXOwOWF.12o20jBumw.10YEat2'
+        //const key = process.env.REACT_APP_API_KEY;
         console.log(key)
         
         
@@ -31,16 +32,20 @@ const Spells = () => {
 
     return (
         <div className="spells">
+
           <h1>Spells</h1>
           <Cards />
             <ul>
                 {spells.map(spell => (
+                    <>
+                    <Cards />
                     <li key={spell.id}>
-                        <strong>{spell.spell}</strong>
+                        
+                        <strong><p>Name of spell:  {spell.spell} Type of spell: {spell.type} </p> </strong>
                         <br />
-                        <strong>{spell.type}</strong>
-                        <strong>{spell.effect}</strong>
+                        <strong><p>What does the spell do?  {spell.effect} </p></strong>
                     </li>
+                    </>
                 ))}
             </ul>
         </div>
