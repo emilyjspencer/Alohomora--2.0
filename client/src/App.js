@@ -5,12 +5,14 @@ import SortingHat from './components/SortingHat/SortingHat';
 import Quiz from './components/Quiz/Quiz';
 import Spells from './components/Spells/Spells';
 import User from './components/User/User';
+import MainNavigation from './components/shared/MainNavigation/MainNavigation';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const App = () => {
     return (
         <>
           <Router>
+            <MainNavigation />
               <Switch>
                 <Route path="/" exact component={Header}  component={User}/>
                 <Route path="/spells" exact component={Spells} />
