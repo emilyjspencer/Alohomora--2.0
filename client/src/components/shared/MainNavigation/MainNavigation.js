@@ -9,20 +9,17 @@ import './MainNavigation.css';
 const MainNavigation = props => {
 
  
-
   return ( 
       <>
         <nav>
-              <NavigationLinks />
+            <NavigationLinks />
           </nav>
-     
-  
-      <button className="main-navigation_menu-btn">
-        <span />
-        <span />
-        <span />
-      </button>
-      <h1 className="main-navigation_title">
+          <button className="main-navigation_menu-btn">
+            <span />
+            <span />
+            <span />
+          </button>
+          <h1 className="main-navigation_title">
       </h1>
       
   
