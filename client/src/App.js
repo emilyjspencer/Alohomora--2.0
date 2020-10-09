@@ -12,12 +12,11 @@ const App = () => {
         <>
           <Router>
               <Switch>
-                <Route path="/" exact component={Header} />
+                <Route path="/" exact component={Header}  component={User}/>
                 <Route path="/spells" exact component={Spells} />
                 <Chatroom path="/chatroom" exact component={Chatroom} />
                 <Quiz path="/quiz" exact component={Quiz} />
                 <SortingHat path="/sortinghat" exact component={SortingHat} />
-                <User path="/user" exact component={User} />
               </Switch>
           </Router>
         </>

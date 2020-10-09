@@ -50,7 +50,7 @@ npm install
 ```
 * Start the server with:
 ```
-node index.js
+node app.js
 ```
 * Open a second terminal
 * Cd into the client folder

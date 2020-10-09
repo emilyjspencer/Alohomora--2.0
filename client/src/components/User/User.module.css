@@ -1,3 +1,8 @@
 .PotterHead {
     text-align: center;
 }
+
+.inputBox {
+    height: 20px;
+    width: 30px;
+}

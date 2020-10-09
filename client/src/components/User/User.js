@@ -17,8 +17,8 @@ const User = () => {
     return (
         <>
           <Header />
-          <h1 className={classes.PotterHead}>Potterhead</h1>
-          
+          <h1 className={classes.PotterHead}>*</h1>
+          <h3>Please sign in to join the chat</h3>
           <input type="text" placeholder="Please enter a username" className="inputBox" onChange={ (event) => setUsername(event.target.value) }></input>        
           <input type="text" placeholder="Please enter your name" className="inputBox" onChange={ (event) => setName(event.target.value) }></input>
           <input type="text" placeholder="Please enter a room" className="inputBox" onChange={ (event) => setChatroom(event.target.value) }></input>

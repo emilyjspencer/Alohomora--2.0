@@ -5,6 +5,7 @@ import InputBox from '../InputBox/InputBox.js';
 import queryString from 'query-string';
 import io from 'socket.io-client';
 import Messages from '../Messages/Messages';
+import InfoBar from '../InfoBar/InfoBar';
 
 import classes from './Chatroom.module.css';
 import './Chatroom.css';
@@ -67,6 +68,7 @@ const Chatroom = ( { location } ) => {
         <>
           <Header />
           <h1 className={classes.Header}>Chatroom</h1>
+          <InfoBar chatroom={chatroom} />
           <div className="outer">
             <div className="container">
               <ChatHeader chatroom={chatroom} />

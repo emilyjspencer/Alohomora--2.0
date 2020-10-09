@@ -11,8 +11,8 @@ const ChatHeader = ( { chatroom } ) => (
   <div className="infoBar">
       <div className="left">
         <img className="online" alt="online image" src={on} />
-        <h4>You are in the {chatroom} room</h4>
-        <img id="face2" alt="snitch" src={face} />
+        <h4>You are in the <span>{chatroom}</span> room</h4>
+        
       </div>
       <div className="right">
         <a href="/user" ><img src={off} alt="close" /></a>
