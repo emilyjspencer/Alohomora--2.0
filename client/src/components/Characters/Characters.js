@@ -5,9 +5,9 @@ import Cards from '../Cards/Cards';
 import Header from '../UI/Header/Header';
 
 
-const Spells = () => {
+const Characters = () => {
 
-    const [spells, setSpells] = useState([]);
+    //const [characters, setCharacters] = useState([]);
 
     useEffect(() => {
         
@@ -16,35 +16,28 @@ const Spells = () => {
         console.log(key)
         
         
-        
-
-        axios.get(`https://www.potterapi.com/v1/spells?key=${key}`)
+        axios.get(`https://www.potterapi.com/v1/characters?key=${key}`)
           .then(result => {
              console.log(result)
-              const spellsData = result.data;
-              console.log(spellsData);
-
-              console.log(spellsData[0]);
-                setSpells(spellsData)
+              //const charactersData = result.data;
+             
           });
         }, []);
 
 
 
     return (
-        <div className="spells">
+        <div className="characters">
           <Header />
-          <h1>Spells</h1>
+          <h1>Characters</h1>
           <Cards />
             <ul>
-                {spells.map(spell => (
+                {characters.map(character => (
                     <>
                     <Cards />
-                    <li key={spell.id}>
+                    <li key={character.id}>
                         
-                        <strong><p>Name of spell:  {spell.spell} Type of spell: {spell.type} </p> </strong>
-                        <br />
-                        <strong><p>What does the spell do?  {spell.effect} </p></strong>
+                        
                     </li>
                     </>
                 ))}
@@ -57,4 +50,4 @@ const Spells = () => {
 }
 
 
-export default Spells;
+export default Characters;
