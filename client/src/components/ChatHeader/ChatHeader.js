@@ -1,27 +1,28 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-import on from '../../Icons/online.png';
-import off from '../../Icons/close.png';
-import face from '../../images/face.png';
-import snitch from '../../images/snitch.png';
+import close from '../../Icons/close.png';
+import online from '../../Icons/online.png';
 
 import './ChatHeader.css';
 
-const ChatHeader = ( { chatroom } ) => (
-  <div className="infoBar">
-      <div className="left">
-        <img className="online" alt="online image" src={on} />
-        <h4>You are in the <span>{chatroom}</span> room</h4>
-        
+const ChatHeader = ({ chatroom }) => { 
+  return ( 
+    <>
+      <div className="chatHeader">
+          <div className="left">
+              <img pl-20 className="onlineIcon" alt="onlineimage" src={online} />
+          </div>
+          <h4>You are in the <span>{chatroom}</span> room</h4>
+          <div className="right"></div>
+          <a href="/"><img className="offlineIcon" src={close} alt="closeimage"/></a>
+          
       </div>
-      <div className="right">
-        <a href="/" ><img className="close" src={off} alt="close" /></a>
-      </div>
-      <div className="potter">
-          <img id="face" alt="hp" src={face} />
-      </div>
-  </div>
+      <h3>{chatroom}</h3> 
+      </>
+      
+     
+  )
 
-)
+}
 
 export default ChatHeader;

@@ -5,7 +5,8 @@ import InputBox from '../InputBox/InputBox.js';
 import queryString from 'query-string';
 import io from 'socket.io-client';
 import Messages from '../Messages/Messages';
-import InfoBar from '../InfoBar/InfoBar';
+
+
 
 import classes from './Chatroom.module.css';
 import './Chatroom.css';
@@ -15,26 +16,25 @@ let socket;
 const Chatroom = ( { location } ) => {
 
   const [name, setName] = useState('');
-  const [username, setUsername] = useState('');
   const [chatroom, setChatroom] = useState('');
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState([]);
   const [messages, setMessages] = useState([]);
 
   const ENDPOINT = 'localhost:5000';
 
   useEffect(() => {
-    const { username, name, chatroom } = queryString.parse(location.search)
+    const {  name, chatroom } = queryString.parse(location.search)
 
     socket = io(ENDPOINT);
-    console.log(name, username, chatroom);
+    console.log(name, chatroom);
     console.log(location.search);
     console.log(socket);
 
     setName(name);
-    setUsername(username);
     setChatroom(chatroom);
 
-    socket.emit('enterUser', { name, username, chatroom }, () => {
+    // named event - name of event is enterUser - must match the name on the backend
+    socket.emit('enterUser', { name, chatroom }, () => {
       
 
     });
@@ -45,13 +45,6 @@ const Chatroom = ( { location } ) => {
       socket.off();
     }
   }, [ENDPOINT, location.search]); 
-
-  useEffect(() => {
-    socket.on('message', (message) => {
-      setMessages([...messages, message]);
-    })
-  }, [messages])
-
 
   const sendMessage = (event) => {
 
@@ -64,17 +57,28 @@ const Chatroom = ( { location } ) => {
   }
   console.log(message, messages);
 
+  useEffect(() => {
+    socket.on('message', (message) => {
+      setMessages([...messages, message]);
+    })
+  }, [messages])
+
+
+  
+
     return (
         <>
           <Header />
           <h1 className={classes.Header}>Chatroom</h1>
-          <InfoBar chatroom={chatroom} />
+          
           <div className="outer">
             <div className="container">
-              <ChatHeader chatroom={chatroom} />
+              
+              <ChatHeader  chatroom={chatroom} />
+              <Messages messages={messages} name={name} />
               <InputBox message={message} setMessage={setMessage} sendMessage={sendMessage} />
               
-                <Messages messages={messages} name={name} />
+               
             </div>
 
           </div>

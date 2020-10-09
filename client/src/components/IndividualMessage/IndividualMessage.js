@@ -14,20 +14,20 @@ const IndividualMessage = ( { message: { user, text }, name } ) => {
     return (
         belongsToCurrentUser 
         ? (
-            <div className="messageContainer">
+            <div className="messageContainer" justifyEnd>
                 <p className="textSentByUser pr-10">{alteredName}</p>
                 <div className="messageBox backgroundGreen">
-                    <p className="messageText colorWhite">{text}</p>
+                    <p className="messageText" colorWhite>{text}</p>
                 </div>
 
             </div>
         )
         : (
-            <div className="messageContainer">
+            <div className="messageContainer" justifyStart>
                 <div className="messageBox backgroundLight">
                     <p className="messageText colorDark">{text}</p>
                 </div>
-                <p className="sentText pl-10">{user}</p>
+                <p className="textSentByUser pl-10">{user}</p>
             </div>
 
         )

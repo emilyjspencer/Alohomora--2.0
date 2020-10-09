@@ -6,7 +6,8 @@ import face from '../../images/face.png';
 
 import './InputBox.css';
 
-const InputBox  = ( { message, setMessage, sendMessage }) => (
+const InputBox  = ( { message, setMessage, sendMessage }) => {
+  return (
     <form className="form" >
         <input 
         className="input"
@@ -14,7 +15,7 @@ const InputBox  = ( { message, setMessage, sendMessage }) => (
         placeholder="Enter a message"
         value={message}
         onChange={(event) => setMessage(event.target.value)}
-        onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}
+        onKeyPress={(event) => event.key === 'Enter' ? sendMessage(event) : null}
         />
         <button 
           className="send"
@@ -22,7 +23,7 @@ const InputBox  = ( { message, setMessage, sendMessage }) => (
         </button>
 
     </form>
+  )
+}
 
-
-)
 export default InputBox;
