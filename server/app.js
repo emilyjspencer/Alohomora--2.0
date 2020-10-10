@@ -26,29 +26,35 @@ io.on('connect', (socket) => {
         console.log( name, chatroom, username);
 
         const { user } = addUser({ id: socket.id, name, chatroom, username });
-        //if(error) return callback(error);
-        socket.join(user.chatroom); // subscribe the socket to the channel
-        socket.emit('message', { user: 'adminwizard', text: `Welcome to the ${user.chatroom} room, ${user.name} ${user.username}`});
-
+       
+        socket.join(user.chatroom);
+        socket.emit('adminMessage', { user: 'adminwizard', text: `Welcome to the ${user.chatroom} room, ${user.name} ${user.username}`});
+       
         socket.broadcast.to(user.chatroom).emit('message', { user: 'adminwizard', text: `${user.name} ${user.username} has joined the chat`});
 
+        io.to(user.chatroom).emit('chatroom', { chatroom: user.chatroom, users: findAllUsers(user.chatroom)});
         
 
         callback();
         
     });
 
-    // this is where the problem is
-    socket.on('sendMessage', (message, callback) => {
+   
+    socket.on('userMessage', (message, callback) => {
         const user = findUser(socket.id);
          console.log(user)
-        io.to(user.chatroom).emit('message', { user: user.name, text: message });
-
+         io.to(user.chatroom).emit('message', { user: user.name, text: message });
         callback();
     })
 
     socket.on('disconnect', () => {
-        console.log('User has left the chat')
+        console.log('User has left the chat');
+        const user = deleteUser(socket.id);
+
+        if(user) {
+            io.to(user.chatroom).emit('message', { user: 'adminwizard', text: `${user.name} has left the chat.`});
+            io.to(user.chatroom).emit('chatroom', { chatroom: user.chatroom, users: findAllUsers(user.chatroom)});
+        }
     })
 });
 

@@ -1,9 +1,6 @@
 import React from 'react'
 
 
-import face from '../../images/face.png';
-
-
 import './InputBox.css';
 
 const InputBox  = ( { message, setMessage, sendMessage }) => {

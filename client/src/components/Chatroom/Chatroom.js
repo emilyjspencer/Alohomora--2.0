@@ -5,6 +5,7 @@ import InputBox from '../InputBox/InputBox.js';
 import queryString from 'query-string';
 import io from 'socket.io-client';
 import Messages from '../Messages/Messages';
+import AllUsers from '../AllUsers/AllUsers';
 
 
 
@@ -18,8 +19,9 @@ const Chatroom = ( { location } ) => {
   const [name, setName] = useState('');
   const [chatroom, setChatroom] = useState('');
   const [username, setUsername] = useState('');
-  const [message, setMessage] = useState([]);
+  const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
+  const [users, setUsers] = useState([]);
 
   const ENDPOINT = 'localhost:5000';
 
@@ -34,7 +36,6 @@ const Chatroom = ( { location } ) => {
     setName(name);
     setChatroom(chatroom);
 
-    // named event - name of event is enterUser - must match the name on the backend
     socket.emit('enterUser', { name, chatroom, username}, () => {
       
 
@@ -52,7 +53,7 @@ const Chatroom = ( { location } ) => {
     event.preventDefault();
 
     if(message) {
-        socket.emit('sendMessage', message, () => setMessage(''));
+        socket.emit('userMessage', message, () => setMessage(''));
 
     }
   }
@@ -61,11 +62,12 @@ const Chatroom = ( { location } ) => {
   useEffect(() => {
     socket.on('message', (message) => {
       setMessages([...messages, message]);
+    });
+
+    socket.on('usersInRoom', ({ users }) => {
+      setUsers(users)
     })
-  }, [messages])
-
-
-  
+  }, []);
 
     return (
         <>
@@ -74,14 +76,11 @@ const Chatroom = ( { location } ) => {
           
           <div className="outer">
             <div className="container">
-              
               <ChatHeader  chatroom={chatroom} />
               <Messages messages={messages} name={name} username={username} />
-              <InputBox message={message} setMessage={setMessage} sendMessage={sendMessage} />
-              
-               
+              <InputBox message={message} setMessage={setMessage} sendMessage={sendMessage} />  
             </div>
-
+             <AllUsers users={users} />
           </div>
         </>
     )
