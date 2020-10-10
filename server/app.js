@@ -32,7 +32,7 @@ io.on('connect', (socket) => {
        
         socket.broadcast.to(user.chatroom).emit('message', { user: 'adminwizard', text: `${user.name} ${user.username} has joined the chat`});
 
-        io.to(user.chatroom).emit('chatroom', { chatroom: user.chatroom, users: findAllUsers(user.chatroom)});
+        io.to(user.chatroom).emit('usersInRoom', { chatroom: user.chatroom, users: findAllUsers(user.chatroom)});
         
 
         callback();
@@ -53,7 +53,7 @@ io.on('connect', (socket) => {
 
         if(user) {
             io.to(user.chatroom).emit('message', { user: 'adminwizard', text: `${user.name} has left the chat.`});
-            io.to(user.chatroom).emit('chatroom', { chatroom: user.chatroom, users: findAllUsers(user.chatroom)});
+            io.to(user.chatroom).emit('usersInRoom', { chatroom: user.chatroom, users: findAllUsers(user.chatroom)});
         }
     })
 });
