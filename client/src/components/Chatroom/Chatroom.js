@@ -17,16 +17,17 @@ const Chatroom = ( { location } ) => {
 
   const [name, setName] = useState('');
   const [chatroom, setChatroom] = useState('');
+  const [username, setUsername] = useState('');
   const [message, setMessage] = useState([]);
   const [messages, setMessages] = useState([]);
 
   const ENDPOINT = 'localhost:5000';
 
   useEffect(() => {
-    const {  name, chatroom } = queryString.parse(location.search)
+    const {  name, chatroom, username } = queryString.parse(location.search)
 
     socket = io(ENDPOINT);
-    console.log(name, chatroom);
+    console.log(name, chatroom, username);
     console.log(location.search);
     console.log(socket);
 
@@ -34,7 +35,7 @@ const Chatroom = ( { location } ) => {
     setChatroom(chatroom);
 
     // named event - name of event is enterUser - must match the name on the backend
-    socket.emit('enterUser', { name, chatroom }, () => {
+    socket.emit('enterUser', { name, chatroom, username}, () => {
       
 
     });
@@ -75,7 +76,7 @@ const Chatroom = ( { location } ) => {
             <div className="container">
               
               <ChatHeader  chatroom={chatroom} />
-              <Messages messages={messages} name={name} />
+              <Messages messages={messages} name={name} username={username} />
               <InputBox message={message} setMessage={setMessage} sendMessage={sendMessage} />
               
                

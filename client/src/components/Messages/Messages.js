@@ -6,12 +6,12 @@ import IndividualMessage from '../IndividualMessage/IndividualMessage';
 import './Messages.css';
 
 
-const Messages = ( { messages, name } ) => {
+const Messages = ( { messages, name, username } ) => {
     return (
     <>
      <h1>Chat</h1>
     <ScrollToBottom className="messages">
-        {messages.map((message, index) => <div key={index}><IndividualMessage message={message} name={name}   /></div>)}
+        {messages.map((message, index) => <div key={index}><IndividualMessage message={message} name={name} username={username}  /></div>)}
     </ScrollToBottom>
     </>
     )

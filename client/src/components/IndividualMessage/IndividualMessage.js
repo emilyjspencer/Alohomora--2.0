@@ -23,7 +23,7 @@ const IndividualMessage = ( { message: { user, text }, name } ) => {
             </div>
         )
         : (
-            <div className="messageContainer" justifyStart>
+            <div className="messageContainer" justifystart>
                 <div className="messageBox backgroundLight">
                     <p className="messageText colorDark">{text}</p>
                 </div>

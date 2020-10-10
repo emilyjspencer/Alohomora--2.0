@@ -22,25 +22,26 @@ app.use(router);
 io.on('connect', (socket) => {
     console.log('Connecting....')
 
-    socket.on('enterUser', ( { name, chatroom}, callback)  => {
-        console.log( name, chatroom);
+    socket.on('enterUser', ( { name, chatroom, username}, callback)  => {
+        console.log( name, chatroom, username);
 
-        const { error, user } = addUser({ id: socket.id, name, chatroom });
-        if(error) return callback(error);
-        socket.join(user.chatroom);
-        socket.emit('message', { user: 'adminwizard', text: `Welcome to the ${user.chatroom} room, ${user.name}`});
+        const { user } = addUser({ id: socket.id, name, chatroom, username });
+        //if(error) return callback(error);
+        socket.join(user.chatroom); // subscribe the socket to the channel
+        socket.emit('message', { user: 'adminwizard', text: `Welcome to the ${user.chatroom} room, ${user.name} ${user.username}`});
 
-        socket.broadcast.to(user.chatroom).emit('message', { user: 'adminwizard', text: `${user.name} has joined the chat`});
+        socket.broadcast.to(user.chatroom).emit('message', { user: 'adminwizard', text: `${user.name} ${user.username} has joined the chat`});
 
-      
+        
 
         callback();
         
     });
 
+    // this is where the problem is
     socket.on('sendMessage', (message, callback) => {
         const user = findUser(socket.id);
-
+         console.log(user)
         io.to(user.chatroom).emit('message', { user: user.name, text: message });
 
         callback();

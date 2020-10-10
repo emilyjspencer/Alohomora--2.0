@@ -17,7 +17,7 @@ const ChatHeader = ({ chatroom }) => {
           <a href="/"><img className="offlineIcon" src={close} alt="closeimage"/></a>
           
       </div>
-      <h3>{chatroom}</h3> 
+     
       </>
       
      

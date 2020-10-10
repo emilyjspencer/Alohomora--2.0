@@ -1,22 +1,25 @@
 const users = [];
 
 
-const addUser = ( { id, name, chatroom } ) => {
+const addUser = ( { id, name, chatroom, username } ) => {
 
     name = name.trim().toLowerCase();
     chatroom = chatroom.trim().toLowerCase();
+    username = username.trim().toLowerCase();
 
-    const checkForUser = users.find((user) => user.name === name && user.chatroom === chatroom);
+    const checkForUser = users.find((user) => user.name === name && user.chatroom === chatroom && user.username === username);
 
     if(checkForUser) {
         return { error: 'Name is already taken. Please try again'}
     } else {
-      const user = { id, name, chatroom};
+      const user  = { id, name, chatroom, username};
     
       users.push(user);
 
-      return { user };
+      return { user } ;
+      
   }
+ 
 }
 
 
@@ -33,7 +36,7 @@ const deleteUser = (id) => {
 }
 
 const findUser = (id) => {
-    users.find((user) => user.id === id);
+   return users.find((user) => user.id === id);
 
 }
 
