@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-import Header from '../UI/Header/Header';
+import Header from '../shared//UI/Header/Header';
 
 import './Quiz.css';
 

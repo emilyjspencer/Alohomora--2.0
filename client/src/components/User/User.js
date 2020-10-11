@@ -1,6 +1,6 @@
 import React, { Fragment, useState} from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../UI/Header/Header';
+import Header from '../shared/UI/Header/Header';
 
 
 import classes from './User.module.css';

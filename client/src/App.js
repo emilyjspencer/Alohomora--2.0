@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import Header from './components/UI/Header/Header';
+import Header from './components/shared/UI/Header/Header';
 import Chatroom from './components/Chatroom/Chatroom';
 import SortingHat from './components/SortingHat/SortingHat';
 import Quiz from './components/Quiz/Quiz';

@@ -2,7 +2,7 @@ import React, { fragment, useState, useEffect } from 'react';
 import axios from 'axios';
 
 import Cards from '../Cards/Cards';
-import Header from '../UI/Header/Header';
+import Header from '../shared//UI/Header/Header';
 
 
 const Spells = () => {

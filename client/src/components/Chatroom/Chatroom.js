@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import Header from '../UI/Header/Header';
+import Header from '../shared/UI/Header/Header';
 import ChatHeader from '../ChatHeader/ChatHeader';
 import InputBox from '../InputBox/InputBox.js';
 import queryString from 'query-string';
