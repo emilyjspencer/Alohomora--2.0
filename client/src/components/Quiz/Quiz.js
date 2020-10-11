@@ -94,7 +94,7 @@ endQuizHandler = () => {
  
   }
 
-  startQuizHandler = () => {
+  restartQuizHandler = () => {
     this.setState({
       index: 0,
       options: [],
@@ -122,7 +122,7 @@ endQuizHandler = () => {
               
                  
             ))}
-            <button onClick={this.startQuizHandler}>Play Again</button>
+            <button onClick={this.restartQuizHandler}>Play Again</button>
           </ul>
         </div>
       )
