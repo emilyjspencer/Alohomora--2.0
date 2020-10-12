@@ -36,17 +36,15 @@ const Chatroom = ( { location } ) => {
     setName(name);
     setChatroom(chatroom);
 
-    socket.emit('enterUser', { name, chatroom, username}, () => {
-      
+    socket.emit('enterUser', { name, chatroom, username}, (error) => {
+      if(error) {
+        alert(error);
+      }
 
     });
-
-    return () => {
-      socket.emit('disconnect');
-
-      socket.off();
-    }
   }, [ENDPOINT, location.search]); 
+
+  
 
   const sendMessage = (event) => {
 
