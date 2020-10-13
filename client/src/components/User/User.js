@@ -2,7 +2,7 @@ import React, { Fragment, useState} from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../shared/UI/Header/Header';
 
-
+import badges from '../../images/hogwartsillustration.jpg';
 import classes from './User.module.css';
 
 const User = () => {
@@ -16,6 +16,7 @@ const User = () => {
     return (
         <>
           <Header />
+          <img src={badges} alt="hogwartshouses" />
           <h1>About Alohomora 2.0</h1>
           <h2>Alohomora 2.0 is an application for Harry Potter fans</h2>
           <h1 className={classes.PotterHead}>*</h1>
