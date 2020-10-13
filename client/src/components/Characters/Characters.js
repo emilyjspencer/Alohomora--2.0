@@ -41,9 +41,9 @@ const Characters = () => {
                 {characters.map(character => (
                     <>
                     <li key={character.id}>
-                        <strong><p>Name of character:  {character.name}  </p> </strong> 
-                        <strong><p>Character's role: {character.role} </p></strong>
-                        <strong><p>Character's house: {character.house} </p></strong>
+                        <strong><p>Name of character:</p>  {character.name} </strong> 
+                        <strong><p>Character's role:</p>{character.role}</strong>
+                        <strong><p>Character's house:</p>{character.house}</strong>
                     </li>
                     </>
                 ))}

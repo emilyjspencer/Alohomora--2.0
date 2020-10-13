@@ -34,8 +34,12 @@ ul li {
   margin: 5px;
 }
 
-#harryronhermione {
-  height: 10px;
+#friends {
+  height: 400px;
+}
+
+#malfoy {
+  height: 400px;
 }
 
 h1, h2, p {
@@ -46,7 +50,18 @@ button {
   font-family: Dancing Script;
 }
 
-#staircase {
-  padding: 70px;
+#hogsmead {
+  height: 500px;
+  width: 400px;
+}
+
+#erised {
+  height: 500px;
+  width: 400px;
+}
+
+#greathall {
+  height: 500px;
+  width: 400px;
 }
   
