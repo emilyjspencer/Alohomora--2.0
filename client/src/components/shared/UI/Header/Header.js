@@ -11,7 +11,7 @@ const Header = () => {
         <>
    
         <img classNAme={classes.Banner}src={Banner} />
-        <h1 className={classes.Header}>Alohomora - unlock the conversation</h1>
+        
         {''}
         {''}
         {''}

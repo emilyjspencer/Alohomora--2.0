@@ -12,11 +12,12 @@ const User = () => {
     const [chatroom, setChatroom] = useState('');
     const [username, setUsername] = useState('');
 
-    let message = "Please enter a name and room"
 
     return (
         <>
           <Header />
+          <h1>About Alohomora 2.0</h1>
+          <h2>Alohomora 2.0 is an application for Harry Potter fans</h2>
           <h1 className={classes.PotterHead}>*</h1>
           <h3>Please sign in to join the chat</h3>
     
