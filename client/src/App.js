@@ -3,6 +3,7 @@ import Header from './components/shared/UI/Header/Header';
 import Chatroom from './components/Chatroom/Chatroom';
 import SortingHat from './components/SortingHat/SortingHat';
 import Quiz from './components/Quiz/Quiz';
+import Characters from './components/Characters/Characters';
 import Spells from './components/Spells/Spells';
 import User from './components/User/User';
 import MainNavigation from './components/shared/MainNavigation/MainNavigation';
@@ -18,6 +19,7 @@ const App = () => {
                 <Route path="/spells" exact component={Spells} />
                 <Chatroom path="/chatroom" exact component={Chatroom} />
                 <Quiz path="/quiz" exact component={Quiz} />
+                <Characters path="/characters" exact component={Characters} />
                 <SortingHat path="/sortinghat" exact component={SortingHat} />
               </Switch>
           </Router>
