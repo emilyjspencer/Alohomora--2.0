@@ -3,6 +3,9 @@ import React, { Component, Fragment } from 'react';
 import Header from '../shared//UI/Header/Header';
 
 import './Quiz.css';
+import Malfoy from '../../images/malfoyillustration.jpg';
+import staircase from '../../images/movingstaircase.jpg';
+
 
 import { QuizData } from './QuizData';
 
@@ -131,6 +134,9 @@ endQuizHandler = () => {
         <>
           <Header />
           <h1 className="Header">Test your Harry Potter knowledge</h1>
+          <img src={Malfoy} alt="malfoyattackshermione" id="malfoy" />
+          <img src={Malfoy} alt="malfoyattackshermione" id="malfoy" />
+          <img src={Malfoy} alt="malfoyattackshermione" id="malfoy" />
           <div>
             <h2>{question}</h2>
             { 
@@ -163,7 +169,7 @@ endQuizHandler = () => {
             <br />
             
             <br />
-            
+            <img id="staircase" src={staircase} alt="staircase" />
            
           </div>
         </>

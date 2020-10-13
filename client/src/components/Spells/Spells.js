@@ -4,6 +4,9 @@ import axios from 'axios';
 import Cards from '../Cards/Cards';
 import Header from '../shared//UI/Header/Header';
 
+import snape from '../../images/snapespells.png';
+import './spells.css';
+
 
 const Spells = () => {
 
@@ -34,7 +37,8 @@ const Spells = () => {
     return (
         <div className="spells">
           <Header />
-          <h1>Spells</h1>
+          <img className="snape" src={snape} alt="snape" />
+          <h3>Scroll to list a list of spells</h3>
           <Cards />
             <ul>
                 {spells.map(spell => (

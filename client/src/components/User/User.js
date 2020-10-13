@@ -18,8 +18,14 @@ const User = () => {
           <Header />
           <img src={badges} alt="hogwartshouses" />
           <h1>About Alohomora 2.0</h1>
-          <h2>Alohomora 2.0 is an application for Harry Potter fans</h2>
-          <h1 className={classes.PotterHead}>*</h1>
+          <h4>Alohomora 2.0 is an application for Harry Potter fans</h4>
+          <br />
+          <p>Alohomora 2.0 provides an online chatroom where you can chat about Harry Potter with other fans</p>
+          <p>If you would like to test your knowledge of the books and films, please try our the quiz</p>
+          <p>To view a list of spells: click on 'Spells' at the top of the page</p>
+          <p>To see a full list of characters from the books, along with their respective houses etc, please click on</p>
+          <p>'Characters' at the top of the page</p>
+          <br />
           <h3>Please sign in to join the chat</h3>
     
           <input type="text" placeholder="Please enter your name" className="inputBox" onChange={ (event) => setName(event.target.value) }></input>
