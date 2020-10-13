@@ -59,3 +59,22 @@ node app.js
 npm start
 ```
 * A browser window should open at localhost:3000
+
+### What is (currently looks like)
+
+Homepage:
+![homepage](homepage.png)
+Homepage:
+![homepage](homepage2.png)
+Spells:
+![spells](spells.png)
+Quiz:
+![quiz1](quiz1.png)
+Quiz:
+![quiz2](quiz2.png)
+Chat:
+![chat](chat.png)
+Main page:
+![hogwarts](hogwarts.png)
+Sign in:
+![signin](signin.png)

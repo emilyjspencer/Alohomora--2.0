@@ -44,7 +44,7 @@ const Spells = () => {
           <img className="snape" src={snape} alt="snape" />
           <img className="patronus" src={patronus} alt="patronus" />
           <h3>Scroll to list a list of spells</h3>
-          <Cards />
+          
             <ul>
                 {spells.map(spell => (
                     <>
