@@ -3,6 +3,16 @@
     height: 500px;
 }
 
+.wand {
+    width: 300px;
+    height: 500px;
+}
+
+.patronus {
+    width: 300px;
+    height: 500px;
+}
+
 h3 {
     font-family: Dancing Script;
 }

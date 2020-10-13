@@ -5,6 +5,9 @@ import Cards from '../Cards/Cards';
 import Header from '../shared//UI/Header/Header';
 
 import snape from '../../images/snapespells.png';
+import wand from '../../images/purchasewand.jpg';
+import patronus from '../../images/patronus2.jpg';
+
 import './spells.css';
 
 
@@ -37,7 +40,9 @@ const Spells = () => {
     return (
         <div className="spells">
           <Header />
+          <img className="wand" src={wand} alt="wand" />
           <img className="snape" src={snape} alt="snape" />
+          <img className="patronus" src={patronus} alt="patronus" />
           <h3>Scroll to list a list of spells</h3>
           <Cards />
             <ul>
