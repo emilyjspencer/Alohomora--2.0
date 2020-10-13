@@ -1,0 +1,16 @@
+.PotterHead {
+    text-align: center;
+}
+
+.inputBox {
+    height: 20px;
+    width: 30px;
+}
+
+h1, h3{
+    font-family: Dancing Script;
+}
+
+body {
+    background-color: rgb(88, 86, 86);
+}

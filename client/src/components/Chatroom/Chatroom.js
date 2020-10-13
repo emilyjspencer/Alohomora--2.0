@@ -11,6 +11,8 @@ import AllUsers from '../AllUsers/AllUsers';
 
 import classes from './Chatroom.module.css';
 import './Chatroom.css';
+import nightbus from '../../images/nightbus2.jpg';
+import hogwarts from '../../images/hogwarts3.jpg';
 
 let socket;
 
@@ -44,7 +46,7 @@ const Chatroom = ( { location } ) => {
     });
   }, [ENDPOINT, location.search]); 
 
-  
+
 
   const sendMessage = (event) => {
 
@@ -71,7 +73,9 @@ const Chatroom = ( { location } ) => {
         <>
           <Header />
           <h1 className={classes.Header}>Chatroom</h1>
-          
+          <img className="hogwarts" src={hogwarts} />
+          <img className="nightbus" src={nightbus} alt="nightbus" />
+          <img className="hogwarts" src={hogwarts} />
           <div className="outer">
             <div className="container">
               <ChatHeader  chatroom={chatroom} />
