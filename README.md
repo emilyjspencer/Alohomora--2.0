@@ -2,6 +2,8 @@
 
 ### An application for Harry Potter fans
 
+Deployed (temporarily) at the following: https://5f88db6e46264f4cec7743c1--thirsty-johnson-2e67ef.netlify.app
+
 Alohomora 2.0 features a chat-room, a quiz, and pages with spells and characters (which have been pulled from the Unofficial Harry Potter API)
 
 ### User Stories
