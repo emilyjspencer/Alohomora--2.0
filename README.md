@@ -78,3 +78,5 @@ Main page:
 ![hogwarts](hogwarts.png)
 Sign in:
 ![signin](signin.png)
+Characters (zoomed out):
+![zoomedoutcharacters](zoomedoutcharacters.png)
