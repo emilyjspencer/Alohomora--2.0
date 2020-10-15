@@ -3,6 +3,7 @@ import Cards2 from '../Cards/Cards2';
 import axios from 'axios';
 import Grid from '@material-ui/core/Grid';
 import Header from '../shared//UI/Header/Header';
+import Footer from '../shared/UI/Footer/Footer';
 
 import snape from '../../images/snapespells.png';
 import wand from '../../images/purchasewand.jpg';
@@ -34,6 +35,7 @@ useEffect(() => {
   
 
         return (
+          <>
           <div className="spells">
           <Header />
           <img className="wand" src={wand} alt="wand" />
@@ -51,7 +53,10 @@ useEffect(() => {
              />
             </Grid> )}
               </Grid>
-               </div>); 
+               </div>
+               <Footer />
+               </>
+        );
       }
                
 export default Spells2;

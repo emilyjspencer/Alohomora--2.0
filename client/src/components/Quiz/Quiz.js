@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 
 import Header from '../shared//UI/Header/Header';
+import Footer from '../shared/UI/Footer/Footer';
 
 import './Quiz.css';
 import Malfoy from '../../images/malfoyillustration.jpg';
@@ -177,6 +178,11 @@ endQuizHandler = () => {
             <img id="erised" src={erised} alt="erised" />
             <img id="greathall" src={greathall} alt="greathallhalloween" />
           </div>
+          <br />
+          <br />
+          <br />
+          <br  />
+          <Footer />
         </>
     )
   }

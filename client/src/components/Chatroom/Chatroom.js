@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Header from '../shared/UI/Header/Header';
+import Footer from '../shared/UI/Footer/Footer';
 import ChatHeader from '../ChatHeader/ChatHeader';
 import InputBox from '../InputBox/InputBox.js';
 import queryString from 'query-string';
@@ -84,6 +85,7 @@ const Chatroom = ( { location } ) => {
             </div>
              <AllUsers users={users} />
           </div>
+          <Footer />
         </>
     )
 }

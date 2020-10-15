@@ -1,6 +1,7 @@
 import React, { Fragment, useState} from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../shared/UI/Header/Header';
+import Footer from '../shared/UI/Footer/Footer';
 
 import badges from '../../images/hogwartsillustration.jpg';
 import classes from './User.module.css';
@@ -34,7 +35,13 @@ const User = () => {
           <Link onClick={event => (!name || !chatroom || !username) ? event.preventDefault() : null} to={`/chatroom?name=${name}&chatroom=${chatroom}&username=${username}`}>
             <button className="button mt-20" type="submit">Proceed to chatroom</button>
           </Link>
-        
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        <Footer />
         </>
     )
 

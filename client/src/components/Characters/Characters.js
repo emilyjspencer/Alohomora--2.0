@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Cards from '../Cards/Cards';
 import Header from '../shared/UI/Header/Header';
+import Footer from '../shared/UI/Footer/Footer';
 
 import muggles from '../../images/muggles.png';
 
@@ -32,6 +33,7 @@ const Characters = () => {
       console.log(characters)
 
     return (
+      <>
         <div className="characters">
           <Header />
           <h1>Characters</h1>
@@ -51,7 +53,8 @@ const Characters = () => {
                
         
         </div>
-        
+        <Footer />
+       </> 
     )
 
 
