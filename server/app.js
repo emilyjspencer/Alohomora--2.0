@@ -17,6 +17,7 @@ const io = socketio(server);
 
 
 app.use(router);
+app.use(cors());
 
 
 io.on('connect', (socket) => {

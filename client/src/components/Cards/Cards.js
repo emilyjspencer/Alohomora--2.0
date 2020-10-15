@@ -3,10 +3,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import cx from 'classnames';
+import './Cards.css';
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 275,
+    minWidth: 215,
   },
   bullet: {
     display: 'inline-block',
