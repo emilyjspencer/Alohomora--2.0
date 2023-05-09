@@ -6,7 +6,7 @@ Deployed (temporarily) at the following: https://5f88db6e46264f4cec7743c1--thirs
 
 Alohomora 2.0 features a chat-room, a quiz, and pages with spells and characters (which have been pulled from the Unofficial Harry Potter API)
 
-#Update
+# Update
 - the API that I used to build this is now deprecated. www.potterapi.com
 I will therefore update the application to use a different api: https://hp-api.onrender.com/
 
