@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const key='$2a$10$0TXo.XhZgsclRMsBTLHsx.5fYykcXOwOWF.12o20jBumw.10YEat2'
-let url = `https://www.potterapi.com/v1/characters?key=${key}`;
+//let url = `https://www.potterapi.com/v1/characters?key=${key}`;
+let url = 'https://hp-api.onrender.com/api/characters';
 
 export const fetchCharacters = async () => {
     try {
